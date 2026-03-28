@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>VL-SAFE: Vision-Language Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving</title>
+  <title>VLM-SAFE: Vision-Language Model-Guided Safety-Aware Reinforcement Learning with World Models for Autonomous Driving </title>
   <link rel="icon" type="image/x-icon" href="static/images/Icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -66,10 +66,13 @@
                     <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Jiancong Chen</a>,
                   </span>
                   <span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=DPN2wc4AAAAJ&hl=zh-CN&oi=ao" target="_blank">Sikai Chen</a><sup>*</sup>
+                    <a href="https://scholar.google.com/citations?user=kEpj_AsAAAAJ&hl=en" target="_blank">Yue Leng</a>
                   </span>
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=hCXBQl8AAAAJ&hl=zh-CN&oi=ao" target="_blank">Samuel Labi</a>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=DPN2wc4AAAAJ&hl=zh-CN&oi=ao" target="_blank">Sikai Chen</a><sup>*</sup>
                   </span>
                   </div>
 
@@ -148,7 +151,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Reinforcement learning (RL)-based autonomous driving policy learning faces critical limitations such as low sample efficiency and poor generalization; its reliance on online interactions and trial-and-error learning is especially unacceptable in safety-critical scenarios. Existing methods, such as safe RL, often fail to capture the true semantic meaning of "safety" in complex driving contexts, leading to either overly conservative behavior or constraint violations. To address these challenges, we propose VL-SAFE, a world model-based safe RL framework with Vision-Language model (VLM)-as safety guidance paradigm, designed for offline safe policy learning. Specifically, we construct offline datasets collected by expert agents and labeled with safety scores derived from VLMs. A world model is trained to generate imagined rollouts together with safety estimations, allowing the agent to perform safe planning without interacting with the real environment. Based on these imagined trajectories and safety evaluations, actor-critic learning is conducted under VLM-based safety guidance to optimize the driving policy more safely and efficiently. Extensive evaluations demonstrate that VL-SAFE achieves superior sample efficiency, generalization, safety, and overall performance compared to existing baselines. To the best of our knowledge, this is the first work that introduces a VLM-guided world model-based approach for safe autonomous driving.  The demo video and code can be accessed at: <a href="https://ys-qu.github.io/vlsafe-website/" target="_blank">https://ys-qu.github.io/vlsafe-website/</a>
+            Autonomous driving policy learning with reinforcement learning (RL) is fundamentally limited by low sample efficiency, weak generalization, and a dependence on unsafe online trial-and-error interactions. Although safe RL introduces explicit constraints or costs, existing methods often fail to capture the semantic meaning of safety in real driving scenes, leading to conservative behaviors in simple cases and insufficient risk awareness in complex ones. To address this issue, we propose VLM-SAFE, an offline safe RL framework that follows a human cognitive loop of observe–imagine–evaluate–act. Starting from offline driving data, VLM-SAFE observes traffic scenarios and leverages a vision-language model (VLM) to provide semantic safety signals grounded in scene understanding. A learned world model then imagines future trajectories from the observed context, enabling the agent to reason about possible consequences without interacting with the real environment. Rather than using imagined rollouts solely for return estimation, VLM-SAFE further evaluates these predicted futures with VLM-based safety guidance, explicitly coupling future anticipation with semantic risk assessment. The resulting safety-aware imagined experience is finally used to optimize the policy via actor-critic learning, such that actions are chosen based on both predicted outcomes and their safety implications. By tightly integrating observation, imagination, evaluation, and action into a unified closed loop, VLM-SAFE enables safer and more efficient offline policy learning for autonomous driving. Extensive experiments in simulation show that VLM-SAFE achieves improved safety, stronger robustness under traffic-density shift, and a better safety–performance trade-off than representative baselines.</a>
           </p>
         </div>
       </div>
